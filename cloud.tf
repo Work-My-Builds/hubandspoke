@@ -230,14 +230,14 @@ resource "azurerm_virtual_network_gateway" "cloudgateway_vpn" {
     asn = 65050
   }
 
-  #vpn_client_configuration {
-  #  address_space = ["192.168.0.0/24"]
-  #  vpn_client_protocols = ["OpenVPN"]
-  #  vpn_auth_types = ["AAD"]
-  #  aad_tenant = "https://login.microsoftonline.com/70e4ef86-5275-4ae9-a3ff-2610232c90cf/"
-  #  aad_audience = "41b23e61-6c1e-4545-b367-cd054e0ed4b4"
-  #  aad_issuer = "https://sts.windows.net/70e4ef86-5275-4ae9-a3ff-2610232c90cf/"
-  #}
+  vpn_client_configuration {
+    address_space = ["192.168.0.0/24"]
+    vpn_client_protocols = ["OpenVPN"]
+    vpn_auth_types = ["AAD"]
+    aad_tenant = "https://login.microsoftonline.com/70e4ef86-5275-4ae9-a3ff-2610232c90cf/"
+    aad_audience = "41b23e61-6c1e-4545-b367-cd054e0ed4b4"
+    aad_issuer = "https://sts.windows.net/70e4ef86-5275-4ae9-a3ff-2610232c90cf/"
+  }
 }
 
 resource "azurerm_local_network_gateway" "cloudgateway_on_premise_gateway1" {
